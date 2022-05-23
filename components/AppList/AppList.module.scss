@@ -1,0 +1,17 @@
+.block {
+	margin-top: 80px;
+	background: rgba(11, 15, 22, 0.47);
+	box-shadow: 8px -8px 10px rgba(0, 0, 0, 0.25);
+	backdrop-filter: blur(25px);
+	overflow: hidden;
+	&__title {
+		font-size: 20px;
+		font-weight: 700;
+	}
+	&__list {
+		display: flex;
+		flex-wrap: nowrap;
+		column-gap: 40px;
+		margin-top: 40px;
+	}
+}

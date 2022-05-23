@@ -9,11 +9,10 @@ import styles from "./AppMovieInfo.module.scss";
 
 
 type AppMovieProps = {
-	itemId: string,
 	infoType: "main" | "singlePage"
 }
 
-const AppMovieInfo:FunctionComponent<AppMovieProps> = ({itemId, infoType}) => {
+const AppMovieInfo:FunctionComponent<AppMovieProps> = ({infoType}) => {
 
 	let [poster, setPoster] = useState<SoloFilm | null>(null)
 	let [loaded, setLoaded] = useState<Boolean>(false)
@@ -44,12 +43,15 @@ const AppMovieInfo:FunctionComponent<AppMovieProps> = ({itemId, infoType}) => {
 						</a>
 					</> : null}
 					<div className={styles.rating}>
-						<div className={styles.rating__imdb}>  {poster?.imDbRating ? "Imdb" + poster.imDbRating : poster?.releaseState ? "Release date: " + poster.releaseState: "" }
+						<div className={styles.rating__imdb}>  {poster?.imDbRating ? "Imdb: " + poster.imDbRating : poster?.releaseState ? "Release date: " + poster.releaseState: "" }
 						</div>
 						<div className={styles.rating__year}>
 							{poster?.year}
 						</div>
-						<div className={styles.rating__year}>{poster?.runtimeMins} mins</div>
+						{
+							poster?.runtimeMins ? (<div className={styles.rating__year}>{poster?.runtimeMins} mins</div>) : null
+						}
+						
 					</div>
 				</div>
 			</div>

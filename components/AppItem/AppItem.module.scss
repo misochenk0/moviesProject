@@ -1,0 +1,35 @@
+.item {
+	width: 170px;
+	flex-shrink: 0;
+	position: relative;
+	&__img {
+		width: 100%;
+		filter: drop-shadow(6px 6px 6px rgba(0, 0, 0, 0.36));
+		border-radius: 7px;
+		height: 240px;
+		object-fit: cover;
+		transition: .5s all;
+	}
+	&__rank {
+		width: auto;
+		height: 30px;
+		background: #5436A9;
+		padding: 5px 10px;
+		position: absolute;
+		top: -15px;
+		left: -15px;
+		font-weight: 700;
+		font-size: 20px;
+		border-radius: 10px;
+	}
+	&__change {
+		font-size: 12px;
+		margin-left: 10px;
+		vertical-align: text-top;
+	}
+	&:hover {
+		.item__img {
+			transform: rotate(5deg)
+		}
+	}
+}

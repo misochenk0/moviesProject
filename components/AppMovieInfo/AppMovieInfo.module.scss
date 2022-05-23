@@ -18,8 +18,9 @@
 	&__img {
 		border-radius: 20px;
 		transform: rotate(5deg);
-		width: 300px;
-		height: auto;
+		width: 400px;
+		height: fit-content;
+		flex-shrink: 0;
 		border: 5px solid #FFC907;
 	}
 	&__btn {
@@ -59,12 +60,12 @@
 	align-items: center;
 	&__imdb {
 		font-weight: 700;
-		font-size: 20px;
+		font-size: 16px;
 		color: #FFC907;
 	}
 	&__year {
 		color: gray;
 		font-weight: 600;
-		font-size: 20px;
+		font-size: 16px;
 	}
 }
