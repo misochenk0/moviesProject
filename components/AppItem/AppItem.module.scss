@@ -1,6 +1,7 @@
 .item {
 	width: 170px;
 	flex-shrink: 0;
+	display: block;
 	position: relative;
 	&__img {
 		width: 100%;
