@@ -1,0 +1,20 @@
+.header {
+	&__list {
+		list-style-type: none;
+		display: flex;
+		align-items: center;
+		column-gap: 50px;
+		padding: 0;
+		margin: 0;
+	}
+	&__item {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 20px;
+		color: #A1B1CB;
+		transition: .3s all;
+		&:hover {
+			color: #fff;
+		}
+	}
+}
