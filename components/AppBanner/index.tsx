@@ -1,7 +1,7 @@
 import type { NextComponentType } from "next"
 import { useEffect, useState } from "react"
 
-import {getFilmById} from "../../pages/api/_getMovies"
+import {getUpcomingMovies} from "../../pages/api/_getMovies"
 
 import type {SoloFilm} from "../../types"
 
@@ -11,13 +11,13 @@ import AppMovieInfo from '../AppMovieInfo';
 
 const AppBanner:NextComponentType = () => {
 
-	let [poster, setPoster] = useState<SoloFilm | null>(null)
+	// let [poster, setPoster] = useState<SoloFilm | null>(null)
 
 
 	useEffect(() => {
-		getFilmById("tt0111161").then(data => {
-			setPoster(data)
-		});
+		// getUpcomingMovies().then(data => {
+		// 	setPoster(data)
+		// });
 	}, [])
 
 	

@@ -1,40 +1,41 @@
-type result = {
-	Title: string,
-	Year: string,
-	Type: string,
-	Poster: string,
-	imdbID: string
+// type result = {
+// 	Title: string,
+// 	Year: string,
+// 	Type: string,
+// 	Poster: string,
+// 	imdbID: string
+// }
+
+// type Rating = {
+// 	Source: string,
+// 	Value: string
+// }
+
+// export type data = {
+// 	Response: string,
+// 	totalResults: string,
+// 	Search: result[]
+// }
+
+type Person = {
+	id: string,
+	name: string
 }
 
-type Rating = {
-	Source: string,
-	Value: string
-}
-
-export type data = {
-	Response: string,
-	totalResults: string,
-	Search: result[]
-}
-
-export type SoloFilm  = result & {
-	Rated: string,
-	Released: string,
-	Runtime: string,
-	Genre: string,
-	Director: string,
-	Writer: string,
-	Actors: string,
-	Plot: string,
-	Language: string,
-	Country: string,
-	Awards: string,
-	Ratings: Rating[],
-	Metascore: string,
-	imdbRating: string,
-	imdbVotes: string,
-	DVD: string,
-	BoxOffice: string,
-	Production: string,
-	Response: "True" | "False"
+export type SoloFilm = {
+	contentRating: string,
+	directorList: Person[],
+	fullTitle: string,
+	genres: string,
+	id: string,
+	imDbRating: string,
+	imDbRatingCount: string,
+	image: string,
+	metacriticRating: string,
+	plot: string,
+	releaseState: string,
+	runtimeMins: string,
+	starList: Person[],
+	year: string,
+	title: string
 }
