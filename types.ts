@@ -3,7 +3,7 @@ type Person = {
 	name: string
 }
 
-type Movie = {
+export type Movie = {
 	id: string,
 	fullTitle: string,
 	title: string,
@@ -11,6 +11,13 @@ type Movie = {
 	imDbRating: string,
 	imDbRatingCount: string,
 	year: string,
+}
+export type options = {
+	genres?: string,
+	title?: string,
+	release_date?: number,
+	user_rating?: string,
+	count?: number
 }
 
 export type SoloFilm = Movie & {

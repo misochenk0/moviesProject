@@ -1,0 +1,13 @@
+.block {
+	overflow: hidden;
+	margin-top: 80px;
+}
+
+.wrapper {
+	min-height: 300px;
+	position: relative;
+	&__title {
+		font-size: 20px;
+		font-weight: 700;
+	}
+}

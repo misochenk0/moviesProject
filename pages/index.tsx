@@ -1,9 +1,9 @@
 import type { NextPage } from "next"
 import Head from "next/head"
 import AppBanner from '../components/AppBanner'
+import AppBlock from '../components/AppBlock'
 
 import AppHeader from "../components/AppHeader"
-import AppList from '../components/AppList'
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       </Head>
       <AppHeader />
       <AppBanner/>
-      <AppList/>
+      <AppBlock/>
     </>
   )
 }

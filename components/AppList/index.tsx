@@ -1,35 +1,27 @@
-import type { NextComponentType } from "next";
-import { useState, useEffect } from "react";
-
-import { getPopularMovies } from '../../pages/api/_getMovies';
-
-import type { MovieWithRating } from '../../types';
+import { FunctionComponent } from "react";
 
 
-import AppItem from '../AppItem';
+import type { MovieWithRating, Movie } from '../../types'
 
-import {Swiper, SwiperSlide} from "swiper/react";
-import 'swiper/css';
-import 'swiper/css/scrollbar';
+
+import AppItem from '../AppItem'
+
+import {Swiper, SwiperSlide} from "swiper/react"
+import 'swiper/css'
 import styles from "./AppList.module.scss"
-const AppList:NextComponentType = () => {
-	
 
-	const [moviesList, setMoviesList] = useState<MovieWithRating[] | []>([])
+type AppListProps = {
+	moviesList: MovieWithRating[] | Movie[] | [],
+	limit: number,
+	title?: string
+}
 
-	const [limit, setLimit] = useState<Number>(10)
-
-	useEffect(() => {
-		getPopularMovies().then(data => {
-			console.log(data);
-			setMoviesList(data.items)
-		})
-	}, [])
+const AppList:FunctionComponent<AppListProps> = ({moviesList, limit, title}) => {
 
 	return (
 		<section className={styles.block}>
 			<div className="container">
-				<h2 className={styles.block__title}>TOP MOVIES YOU MUST WATCH</h2>
+				{title ? (<h2 className={styles.block__title}>{title}</h2>) : null}
 				<Swiper 
 					className={styles.block__list}
 					scrollbar={{ draggable: true }}
@@ -38,7 +30,7 @@ const AppList:NextComponentType = () => {
 					{moviesList.map((item, idx) => {
 						if(idx < limit) {
 							return (
-								<SwiperSlide 	className={styles.block__list}>
+								<SwiperSlide 	className={styles.block__item} key={item.id}>
 									<AppItem item={item}/>
 								</SwiperSlide>
 							)
